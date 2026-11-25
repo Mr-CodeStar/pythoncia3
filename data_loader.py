@@ -38,7 +38,10 @@ def ensure_preaggregations(force: bool = False):
     student_vle_csv = DATA_DIR / "studentVle.csv"
 
     if not student_vle_csv.exists():
-        raise FileNotFoundError(f"Missing {student_vle_csv}")
+        raise FileNotFoundError(
+            "Pre-aggregated cache files are missing and christ_dataset/studentVle.csv is not present. "
+            "Please ensure the christ_dataset/.cache/ folder is committed to your GitHub repository so Streamlit Cloud can load the pre-aggregated metrics."
+        )
 
     vle_ref = pd.read_csv(vle_csv)[["id_site", "activity_type"]].drop_duplicates()
     vle_dict = dict(zip(vle_ref["id_site"], vle_ref["activity_type"]))

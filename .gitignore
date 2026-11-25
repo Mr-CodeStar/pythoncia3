@@ -9,14 +9,12 @@ Dataset/
 # Internal automated test script (used for QA verification, not part of project submission)
 test_dashboard.py
 
-# --- Generated Cache & Large Dataset Files ---
-# Auto-generated pre-aggregated parquet cache (re-generated automatically by data_loader.py)
-christ_dataset/.cache/
-*.parquet
-christ_dataset/
-# Git has a 100MB file limit; studentVle.csv is 1.32 GB and studentAssessment.csv is ~21 MB
-# Uncomment if you use Git LFS or want to prevent pushing massive CSVs to GitHub:
-# christ_dataset/studentVle.csv
+# --- Large Dataset Files (Exceeds GitHub 100MB limit) ---
+# studentVle.csv is 1.32 GB and will be rejected by GitHub's 100MB hard limit.
+# The app uses the compact pre-aggregated parquets in christ_dataset/.cache/ (~1.3 MB total)
+christ_dataset/studentVle.csv
+
+# Note: christ_dataset/.cache/ and *.parquet are TRACKED so Streamlit Community Cloud runs instantly!
 
 # --- Python Environment & Bytecode ---
 __pycache__/
