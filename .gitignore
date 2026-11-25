@@ -1,0 +1,65 @@
+# =============================================================================
+# EduPulse Dashboard - Git Ignore Rules
+# =============================================================================
+
+# --- User-Specified Excluded Folders & Testing Files ---
+# Raw Kaggle dataset folder (original un-enriched files)
+Dataset/
+
+# Internal automated test script (used for QA verification, not part of project submission)
+test_dashboard.py
+
+# --- Generated Cache & Large Dataset Files ---
+# Auto-generated pre-aggregated parquet cache (re-generated automatically by data_loader.py)
+christ_dataset/.cache/
+*.parquet
+christ_dataset/
+# Git has a 100MB file limit; studentVle.csv is 1.32 GB and studentAssessment.csv is ~21 MB
+# Uncomment if you use Git LFS or want to prevent pushing massive CSVs to GitHub:
+# christ_dataset/studentVle.csv
+
+# --- Python Environment & Bytecode ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# --- Virtual Environments ---
+venv/
+.venv/
+env/
+.env/
+ENV/
+env.bak/
+venv.bak/
+
+# --- Streamlit Secrets & Local Config ---
+.streamlit/secrets.toml
+
+# --- IDEs & System Files ---
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini

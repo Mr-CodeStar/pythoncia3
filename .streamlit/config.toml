@@ -1,0 +1,10 @@
+[secrets]
+files = [".streamlit/secrets.toml"]
+
+[server]
+headless = true
+enableCORS = false
+enableXsrfProtection = false
+
+[browser]
+gatherUsageStats = false
